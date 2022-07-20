@@ -10,9 +10,9 @@ const AppRouter = () => {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
         <Route path="/" component={Main} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </Switch>
     </Router>
   );
