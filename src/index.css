@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(85, 85, 85);
+  background-color: rgb(255, 255, 255);
   color: #fff;
   font-family: "Poppins", "sans-serif";
   margin: 0;
@@ -110,7 +110,7 @@ body {
 
 .navbar {
   padding: 1rem 3rem;
-  background-color: #0d47a1 !important;
+  background-color: #0093ce !important;
 }
 
 .register {
@@ -147,8 +147,8 @@ body {
 
 .form-image {
   flex: 1;
-  min-width: 1200px;
-  min-height: 900px;
+  min-width: 300px;
+  min-height: 800px;
 }
 
 .buttons {
