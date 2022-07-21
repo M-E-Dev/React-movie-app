@@ -64,7 +64,7 @@ export const logOut = () => {
 };
 
 
-export const userObserver = () => {
+export const userObserver = (setCurrentUser) => {
   onAuthStateChanged(auth, (currentUser) => {
     if (currentUser) {
       setCurrentUser(currentUser)

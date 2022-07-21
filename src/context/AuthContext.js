@@ -1,11 +1,11 @@
 import { useEffect, useState, createContext } from "react";
 import { userObserver } from "../auth/firebase";
 
-export const AuthContext = createContext()
+export const AuthContext = createContext();
 
 const AuthContextProvider = ({children}) => {
 
-  const [currentUser, setCurrentUser] = useState()
+  const [currentUser, setCurrentUser] = useState();
   
   // -------- // mount + update -- dizi yok her zaman çalışır
   // useEffect(() => {
@@ -17,11 +17,11 @@ const AuthContextProvider = ({children}) => {
   // }, [currentUser])
   // ---------// mount- dizi boş, değişen yok, tek sefer çalışır
   useEffect(() => {
-    userObserver()
-  }, [])
+    userObserver(setCurrentUser)
+  }, []);
 
   return(
-    <AuthContext.Provider value = {{currentUser}} >
+    <AuthContext.Provider value={{currentUser}} >
       {children}
     </AuthContext.Provider>
   )

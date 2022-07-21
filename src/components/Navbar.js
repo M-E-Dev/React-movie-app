@@ -1,21 +1,23 @@
 import React from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logOut } from "../auth/firebase";
-// import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
 
-  const navigate = useNavigate();
-
+  const {currentUser} = useContext(AuthContext)
   // const currentUser = {displayName: "Harry Potter"};
-  const currentUser = false;
+  // const currentUser = false;
+
+  const navigate = useNavigate();
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to={"/"} style={{ color: "white" }}>
-            React Movie App w/Firebase/toastify
+            Movie App w/F.b./toast.
           </Link>
           <div className="buttons">
             {currentUser ? (
