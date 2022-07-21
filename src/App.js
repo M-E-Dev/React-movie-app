@@ -1,11 +1,16 @@
+import React from "react";
 import AppRouter from "./router/AppRouter";
-// import AuthContextProvider from "./context/AuthContext"
+import AuthContextProvider from "./context/AuthContext"
 
 function App() {
   return (
-    // <AuthContextProvider>
-      <AppRouter />
-    // </AuthContextProvider>
+    <div>
+      {/* componentin arasına da koyabiliriz props olarak böyle de gönderebiliriz */}
+      {/* <AuthContextProvider children={<AppRouter />} /> */}
+      <AuthContextProvider>
+        <AppRouter />
+      </AuthContextProvider>
+    </div>
   );
 }
 
