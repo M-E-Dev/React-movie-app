@@ -4,7 +4,7 @@
 // https://console.firebase.google.com --> project-settings
 
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDEXF0hSBYPsrxbLDX90w0tqBSUh3-GiPI",
@@ -24,12 +24,33 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export const createUser = async (email, password) => {
+export const createUser = async (email, password, navigate) => {
   //fonksiyon dökümanda --- https://firebase.google.com/docs/auth/web/start#sign_up_new_users
   try {
     let userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log(userCredential);
+    navigate("/")
+
   } catch (err) {
     alert(err.message);
   }
+};
+
+
+export const signIn = async (email, password, navigate) => {
+  
+  try {
+    let userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log(userCredential);
+    navigate("/")
+  
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+
+export const logOut = () => {
+  signOut(auth)
+  alert("Logged out successfully...")
 };

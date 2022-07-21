@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { logOut } from "../auth/firebase";
 // import { AuthContext } from "../context/AuthContext";
-// import { signOut } from "../auth/firebase";
 
 const Navbar = () => {
 
@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to={"/"} style={{ color: "white" }}>
-            React Movie App
+            React Movie App w/Firebase/toastify
           </Link>
           <div className="buttons">
             {currentUser ? (
@@ -34,7 +34,7 @@ const Navbar = () => {
               <button
                 type="button"
                 className="ms-2 btn btn-outline-light"
-                // onClick={() => signOut()}
+                onClick={() => logOut()}
               >
                 Logout
               </button>
