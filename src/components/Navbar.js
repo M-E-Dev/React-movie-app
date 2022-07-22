@@ -5,10 +5,8 @@ import { logOut } from "../auth/firebase";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-
+  // sadece ihtiyaç duyulan currentUseri aldık
   const {currentUser} = useContext(AuthContext)
-  // const currentUser = {displayName: "Harry Potter"};
-  // const currentUser = false;
 
   const navigate = useNavigate();
 
@@ -17,7 +15,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to={"/"} style={{ color: "white" }}>
-            Movie App w/F.b./toast.
+            Movie App w/F.b./tstfy.
           </Link>
           <div className="buttons">
             {currentUser ? (

@@ -11,6 +11,8 @@ import {
   signOut,
   updateProfile,
   onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -63,13 +65,25 @@ export const logOut = () => {
   alert("Logged out successfully...");
 };
 
-
 export const userObserver = (setCurrentUser) => {
   onAuthStateChanged(auth, (currentUser) => {
     if (currentUser) {
-      setCurrentUser(currentUser)
+      setCurrentUser(currentUser);
     } else {
-      setCurrentUser(false)
+      setCurrentUser(false);
     }
-});
+  });
+};
+
+export const signUpProvider = (navigate) => {
+  const provider = new GoogleAuthProvider();
+
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      console.log(result);
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
