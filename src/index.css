@@ -66,6 +66,23 @@ body {
 .movie:hover .movie-over {
   transform: translateY(0%);
 }
+.movie-bottom {
+  position: absolute;
+  background-color: rgb(5, 5, 5);
+  color: #000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100%;
+  padding: 1rem;
+  transform: translateY(0%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.movie:hover .movie-bottom {
+  transform: translateY(100%);
+}
 
 .tag {
   border-radius: 5px;

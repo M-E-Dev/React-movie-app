@@ -28,7 +28,7 @@ const defaultImage =
     <div>
       <div className="movie" onClick={() => currentUser ? navigate("/details/" + id) : alert("Login to see details!")} >
         <img src={poster_path ? IMG_API + poster_path : defaultImage} alt="" />
-        <div className="d-flex align-items-baseline-justify-content-between p-1 text-white">
+        <div className="movie-bottom d-flex align-items-baseline justify-content-evenly p-1 text-white">
           <h5>{title}</h5>
           { currentUser && (<span
               // koşullu css class
