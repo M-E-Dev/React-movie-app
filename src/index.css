@@ -81,7 +81,7 @@ body {
 }
 
 .movie:hover .movie-bottom {
-  transform: translateY(100%);
+  transform: translateY(-900%);
 }
 
 .tag {
