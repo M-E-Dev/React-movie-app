@@ -21,7 +21,10 @@ const MovieDetail = () => {
   useEffect(() => {
     axios
       .get(movieDetailBaseUrl)
-      .then((res) => {setMovieDetails(res.data); console.log(res.data)})
+      .then((res) => {
+        setMovieDetails(res.data);
+        console.log(res.data);
+      })
       .catch((err) => console.log(err));
   }, [movieDetailBaseUrl]);
 
@@ -34,19 +37,19 @@ const MovieDetail = () => {
             <img
               src={
                 movieDetails?.poster_path
-                  ? baseImageUrl+movieDetails?.poster_path
+                  ? baseImageUrl + movieDetails?.poster_path
                   : defaultImage
               }
               className="img-fluid rounded-start"
               alt="movie_photo"
             />
           </div>
-          <div className="col-md-8 d-flex flex-column">
+          <div className="col-md-8 d-flex movie-detail flex-column">
             <div className="card-body">
               <h5 className="card-title text-danger">Overview</h5>
-              <p className="card-text text-dark ">{movieDetails?.overview}</p>
+              <p className="card-text text-secondary ">{movieDetails?.overview}</p>
             </div>
-            <ul className="list-group">
+            <ul className="list-group ">
               <li className="list-group-item">
                 {"Release Date : " + movieDetails?.release_date}
               </li>
@@ -57,8 +60,8 @@ const MovieDetail = () => {
                 {"Total Vote : " + movieDetails?.vote_count}
               </li>
               <li className="list-group-item">
-                <Link to={-1} className="card-link" >
-                Go Back
+                <Link to={-1} className="card-link">
+                  Go Back
                 </Link>
               </li>
             </ul>
