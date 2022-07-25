@@ -14,8 +14,8 @@ const Navbar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <Link className="navbar-brand" to={"/"} style={{ color: "white" }}>
-            Firebase Movies
+          <Link className="navbar-brand" to={"/"} style={{ color: "maroon" }}>
+            <h1>Firebase Movies</h1>
           </Link>
           <div className="buttons">
             {currentUser ? (
